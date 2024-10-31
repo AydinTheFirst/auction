@@ -99,7 +99,7 @@ const AuctionTable = () => {
     <section className="grid gap-5">
       <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
         <div className="flex items-end justify-start gap-3">
-          <h2 className="text-2xl font-bold">Mezatlar</h2>
+          <h2 className="text-2xl font-bold">Açık Arttırmalar</h2>
           <span className="text-sm text-gray-500">
             ({filteredItems.length}/{auctions?.length})
           </span>
@@ -143,7 +143,10 @@ const AuctionTable = () => {
             <TableColumn key={column.key}>{column.label}</TableColumn>
           )}
         </TableHeader>
-        <TableBody items={rows}>
+        <TableBody
+          emptyContent="Henüz bir açık arttırma bulunmamaktadır."
+          items={rows}
+        >
           {(item) => (
             <TableRow key={item.key}>
               {(columnKey) => (

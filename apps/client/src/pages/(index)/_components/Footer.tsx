@@ -10,7 +10,7 @@ import { LOGO_URL } from "@/config";
 
 export default function Footer() {
   return (
-    <footer className="border-t">
+    <footer className="border-t bg-content1">
       <div className="container px-10 py-16">
         <div className="grid grid-cols-12 gap-5">
           <div className="col-span-12 flex max-w-lg flex-col gap-3 md:col-span-6">

@@ -67,18 +67,6 @@ model Token {
   @@map("tokens")
 }
 
-model RegisterToken {
-  id     String  @id @default(uuid())
-  token  String  @default(cuid())
-  isUsed Boolean @default(false)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  expiresAt DateTime
-
-  @@map("register_tokens")
-}
-
 model Auction {
   id        String @id @default(uuid())
   name      String
@@ -150,29 +138,4 @@ model Product {
   updatedAt DateTime @updatedAt
 
   @@map("products")
-}
-
-model Visit {
-  id        String @id @default(uuid())
-  ip        String
-  userAgent String
-
-  Analytic   Analytic? @relation(fields: [analyticId], references: [id])
-  analyticId String?
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@map("visits")
-}
-
-model Analytic {
-  id     String  @id @default(uuid())
-  url    String
-  visits Visit[]
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@map("analytics")
 }

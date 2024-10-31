@@ -79,7 +79,7 @@ export default function Navbar() {
 
   return (
     <NextNavbar
-      className="bg-[#ffffff] shadow dark:bg-[#18181b]"
+      className="border-b bg-content1"
       maxWidth="2xl"
       onMenuOpenChange={setIsMenuOpen}
       shouldHideOnScroll

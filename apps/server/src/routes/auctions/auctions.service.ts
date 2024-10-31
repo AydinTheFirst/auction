@@ -35,7 +35,7 @@ export class AuctionsService {
   async findOne(id: string) {
     const auction = await this.prisma.auction.findUnique({ where: { id } });
 
-    if (!auction) throw new Error("Açık arttırma bulunamadı!");
+    if (!auction) throw new BadRequestException("Açık arttırma bulunamadı!");
 
     return auction;
   }

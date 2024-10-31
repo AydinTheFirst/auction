@@ -11,9 +11,8 @@ import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
 
 // Routes
-import * as Routes from "@/routes";
+import { routes } from "@/routes";
 import { WebsocketModule } from "@/websocket";
-const routes = Object.values(Routes);
 
 @Module({
   controllers: [AppController],

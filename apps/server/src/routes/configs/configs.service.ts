@@ -19,14 +19,12 @@ export class ConfigsService {
     return configs;
   }
 
-  async findByKey(key: string) {
-    const config = await this.prisma.config.findUnique({ where: { key } });
-    if (!config) throw new Error("Bu ayar bulunamadı!");
-    return config;
-  }
-
   async findOne(id: string) {
-    const config = await this.prisma.config.findUnique({ where: { id } });
+    const config = await this.prisma.config.findFirst({
+      where: {
+        OR: [{ id }, { key: id }],
+      },
+    });
 
     if (!config) throw new Error("Ayar bulunamadı!");
 

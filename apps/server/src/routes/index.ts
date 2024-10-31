@@ -1,11 +1,19 @@
-export * from "./account";
-export * from "./analytics";
-export * from "./auctions";
-export * from "./auth";
-export * from "./configs";
-export * from "./files";
-export * from "./notifications";
-export * from "./offers";
-export * from "./products";
-export * from "./register-tokens";
-export * from "./users";
+import { AuctionsModule } from "./auctions";
+import { AuthModule } from "./auth";
+import { ConfigsModule } from "./configs";
+import { FilesModule } from "./files";
+import { NotificationsModule } from "./notifications";
+import { OffersModule } from "./offers";
+import { ProductsModule } from "./products";
+import { UsersModule } from "./users";
+
+export const routes = [
+  AuctionsModule,
+  AuthModule,
+  ConfigsModule,
+  FilesModule,
+  NotificationsModule,
+  OffersModule,
+  ProductsModule,
+  UsersModule,
+];

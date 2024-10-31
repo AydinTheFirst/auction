@@ -23,6 +23,6 @@ export const sidebarItems = [
     canCreate: true,
     href: "/dashboard/auctions",
     icon: Tag,
-    label: "Mezatlar",
+    label: "Açık Arttırmalar",
   },
 ];
